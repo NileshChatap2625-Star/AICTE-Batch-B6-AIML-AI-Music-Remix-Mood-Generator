@@ -1,0 +1,56 @@
+import librosa
+import numpy as np
+import soundfile as sf
+import matplotlib.pyplot as plt
+
+# Load music file
+def load_music(file_path):
+    y, sr = librosa.load(file_path)
+    return y, sr
+
+# Mood detection using tempo & energy
+def detect_mood(y, sr):
+    tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
+    energy = np.mean(librosa.feature.rms(y=y))
+
+    if tempo > 120 and energy > 0.05:
+        return "Happy / Energetic"
+    elif tempo < 90 and energy < 0.03:
+        return "Sad / Calm"
+    else:
+        return "Neutral / Relaxed"
+
+# Remix music based on mood
+def remix_music(y, sr, mood):
+    if mood == "Happy / Energetic":
+        y_remix = librosa.effects.time_stretch(y, rate=1.2)
+        y_remix = librosa.effects.pitch_shift(y_remix, sr, n_steps=2)
+    elif mood == "Sad / Calm":
+        y_remix = librosa.effects.time_stretch(y, rate=0.8)
+        y_remix = librosa.effects.pitch_shift(y_remix, sr, n_steps=-2)
+    else:
+        y_remix = librosa.effects.time_stretch(y, rate=1.0)
+
+    return y_remix
+
+# Save output audio
+def save_music(y, sr, output_file):
+    sf.write(output_file, y, sr)
+
+# Main program
+def main():
+    input_song = "input_song.wav"   # Add your song here
+    output_song = "remixed_song.wav"
+
+    y, sr = load_music(input_song)
+    mood = detect_mood(y, sr)
+
+    print("Detected Mood:", mood)
+
+    remixed_audio = remix_music(y, sr, mood)
+    save_music(remixed_audio, sr, output_song)
+
+    print("Remixed song saved as:", output_song)
+
+if __name__ == "__main__":
+    main()
