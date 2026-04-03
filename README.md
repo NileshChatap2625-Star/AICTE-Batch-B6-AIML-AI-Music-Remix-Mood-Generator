@@ -135,21 +135,6 @@ Includes:
 
 ---
 
-## ⚠️ Common Issues
-
-### ❌ Drive Mount Error
-**Error:** credential propagation failed  
-
-✔ Fix:
-- Restart runtime  
-- Re-login Google account  
-
----
-
-### ❌ ZIP File Error
-✔ Fix:
-- Ensure file is `.zip`  
-- Re-upload correct file  
 
 ---
 
