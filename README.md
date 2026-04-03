@@ -1,19 +1,19 @@
 📧 Email Assistant (AI-Based)
 
-Automating email classification and actions using AI & Python
+🚀 Automating email classification and actions using AI & Python
 
-🚀 Overview
+🧠 Overview
 
-The Email Assistant is an AI-powered system that analyzes emails and automatically assigns actions like:
+The Email Assistant is an AI-powered system that analyzes emails and automatically assigns actions such as:
 
 📅 Schedule tasks
 📤 Forward emails
 🗂️ Organize inbox
 📌 Mark personal emails
 
-Built using the Enron Email Dataset, this project demonstrates how automation can improve productivity.
+Built using the Enron Email Dataset, this project shows how automation improves productivity.
 
-🧠 Features
+✨ Features
 ✅ Email dataset processing
 ✅ Automated action classification
 ✅ Gmail API integration
@@ -44,7 +44,7 @@ cd email-assistant
 pip install -r requirements.txt
 3️⃣ Run Project
 python main.py
-🔑 Setup (Google Colab)
+🔑 Google Colab Setup
 Authenticate Google Account
 from google.colab import auth
 auth.authenticate_user()
@@ -70,8 +70,14 @@ def agent_action(row):
     else:
         return "Archive"
 📊 Output
-Final processed dataset stored in:
+
+📁 Final dataset stored at:
+
 /content/drive/MyDrive/email dataset/final email assistant.csv
+
 Includes:
-Original data
-New column: Agent_Action
+
+Original email data
+✅ New column: Agent_Action
+📈 Visualization
+📊 Pie chart showing distribution of email actions
