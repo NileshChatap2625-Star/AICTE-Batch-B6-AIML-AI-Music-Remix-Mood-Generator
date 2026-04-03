@@ -1,26 +1,36 @@
-📧 Email Assistant (AI-Based)
+# 📧 Email Assistant (AI-Based)
 
-🚀 Automating email classification and actions using AI & Python
+> 🚀 Automating email classification and actions using AI & Python
 
-🧠 Overview
+---
 
-The Email Assistant is an AI-powered system that analyzes emails and automatically assigns actions such as:
+## 🧠 Overview
 
-📅 Schedule tasks
-📤 Forward emails
-🗂️ Organize inbox
-📌 Mark personal emails
+The **Email Assistant** is an AI-powered system that analyzes emails and automatically assigns actions such as:
 
-Built using the Enron Email Dataset, this project shows how automation improves productivity.
+- 📅 Schedule tasks  
+- 📤 Forward emails  
+- 🗂️ Organize inbox  
+- 📌 Mark personal emails  
 
-✨ Features
-✅ Email dataset processing
-✅ Automated action classification
-✅ Gmail API integration
-✅ Google Drive storage
-✅ Data visualization (charts)
-✅ Scalable AI logic
-🏗️ Project Structure
+Built using the **Enron Email Dataset**, this project shows how automation improves productivity.
+
+---
+
+## ✨ Features
+
+- ✅ Email dataset processing  
+- ✅ Automated action classification  
+- ✅ Gmail API integration  
+- ✅ Google Drive storage  
+- ✅ Data visualization (charts)  
+- ✅ Scalable AI logic  
+
+---
+
+## 🏗️ Project Structure
+
+```bash
 email-assistant/
 │── data/
 │   └── emails.csv.zip
@@ -36,30 +46,62 @@ email-assistant/
 │
 │── README.md
 │── requirements.txt
-⚙️ Installation
-1️⃣ Clone Repository
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone Repository
+```bash
 git clone https://github.com/your-username/email-assistant.git
 cd email-assistant
-2️⃣ Install Dependencies
+```
+
+### 2️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
-3️⃣ Run Project
+```
+
+### 3️⃣ Run Project
+```bash
 python main.py
-🔑 Google Colab Setup
-Authenticate Google Account
+```
+
+---
+
+## 🔑 Google Colab Setup
+
+### Authenticate Google Account
+```python
 from google.colab import auth
 auth.authenticate_user()
-Mount Google Drive
+```
+
+### Mount Google Drive
+```python
 from google.colab import drive
 drive.mount('/content/drive')
-📂 Dataset
-Name: Enron Email Dataset
-Format: CSV (zipped)
-Contains:
-Sender & Receiver
-Subject & Date
-Email content
-Labels
-⚡ Core Logic
+```
+
+---
+
+## 📂 Dataset
+
+- **Name:** Enron Email Dataset  
+- **Format:** CSV (zipped)  
+
+### Contains:
+- Sender & Receiver  
+- Subject & Date  
+- Email content  
+- Labels  
+
+---
+
+## ⚡ Core Logic
+
+```python
 def agent_action(row):
     if row['Cat_1_level_1'] == 1.0:
         return "Add to calendar / notify team"
@@ -69,15 +111,68 @@ def agent_action(row):
         return "Mark as personal / no action"
     else:
         return "Archive"
-📊 Output
+```
+
+---
+
+## 📊 Output
 
 📁 Final dataset stored at:
 
+```
 /content/drive/MyDrive/email dataset/final email assistant.csv
+```
 
 Includes:
+- Original email data  
+- ✅ New column: `Agent_Action`  
 
-Original email data
-✅ New column: Agent_Action
-📈 Visualization
-📊 Pie chart showing distribution of email actions
+---
+
+## 📈 Visualization
+
+- 📊 Pie chart showing distribution of email actions  
+
+---
+
+## ⚠️ Common Issues
+
+### ❌ Drive Mount Error
+**Error:** credential propagation failed  
+
+✔ Fix:
+- Restart runtime  
+- Re-login Google account  
+
+---
+
+### ❌ ZIP File Error
+✔ Fix:
+- Ensure file is `.zip`  
+- Re-upload correct file  
+
+---
+
+## 🔮 Future Improvements
+
+- 🤖 Add AI (LangChain / LLM)  
+- 📩 Auto email reply system  
+- 📅 Calendar integration  
+- 🌐 Web dashboard  
+- 📱 Mobile app  
+
+---
+
+## 👨‍💻 Author
+
+**Nilesh Chatap**
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+- ⭐ Star the repo  
+- 🍴 Fork it  
+- 🛠️ Contribute  
